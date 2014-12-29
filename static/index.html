@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+      textarea {
+        width: 100%;
+        height: 100%;
+      }
+      #code-outer {
+        position: absolute;
+        top: 9.5em;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+      }
+      .panes {
+        position: absolute;
+        top: 00px;
+        left: 0px;
+        right: 0px;
+        width: 100%;
+        min-height: 80%;
+        bottom: 0px;
+      }
+      .left {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 50%;
+        width: 50%;
+        background-color: orange;
+      }
+      .right {
+        position: absolute;
+        left: 50%;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        background-color: lime;
+      }
+      table {
+        padding: 10px;
+      }
+      #slider {
+        display: inline-block;
+      }
+      #slider-label {
+        display: inline-block;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="panes">
+      <div class="left pane">
+        <div id="picture"></div>
+      </div>
+      <div class="right">
+        <table>
+          <tr>
+            <th>upload</th>
+            <td colspan=3><input id="upload" type="file"></td>
+            <th>name</th>
+            <td><input type="text" id="name" size=8 value="UNDEF"></td>
+          </tr>
+          <tr>
+            <th>resolution</th>
+            <td colspan=3>
+              <div id="slider"></div>
+              <span id="slider-label"></span>
+            </td>
+            <th>segments</th>
+            <td colspan=2><input id="segments" value=100 size=5></td>
+          </tr>
+          <tr>
+            <th>xmin</th>
+            <td><input type="text" id="xmin" value="-100" size=4></td>
+            <th>ymin</th>
+            <td><input type="text" id="ymin" value="-100" size=4></td>
+            <th>zup</th>
+            <td><input type="text" id="zup" value="0" size=3></td>
+            <th>vup</th>
+            <td><input type="text" id="vup" value="200" size=3></td>
+          </tr>
+          <tr>
+            <th>xmax</th>
+            <td><input type="text" id="xmax" value="100" size=4></td>
+            <th>ymax</th>
+            <td><input type="text" id="ymax" value="100" size=4></td>
+            <th>zdown</th>
+            <td><input type="text" id="zdown" value="10" size=3></td>
+            <th>vdown</th>
+            <td><input type="text" id="vdown" value="50" size=3></td>
+          </tr>
+          <tr>
+            <th>xangle</th>
+            <td><input type="text" id="xangle" value="0" size=4></td>
+            <th>yangle</th>
+            <td><input type="text" id="yangle" value="0" size=4></td>
+            <th>zangle</th>
+            <td><input type="text" id="zangle" value="0" size=4></td>
+          </tr>
+        </table>
+        <div id="code-outer">
+          <textarea id="code"></textarea>
+        </div>
+      </div>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
+</html>

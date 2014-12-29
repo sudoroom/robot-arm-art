@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "watch": "watchify browser.js -o static/bundle.js -dv",
+    "build": "browserify browser.js | uglifyjs > static/bundle.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ecstatic": "^0.5.8",
+    "element": "^0.1.4",
+    "inform-2d": "^1.0.0",
+    "slideways": "^1.0.0",
+    "svg-create-element": "^1.0.0",
+    "svg-line-segments": "^1.0.0",
+    "svg-linearize": "^1.0.0",
+    "upload-element": "^1.0.1"
+  }
+}
