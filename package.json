@@ -5,6 +5,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "browserify": "^8.0.1",
     "ecstatic": "^0.5.8",
     "element": "^0.1.4",
     "inform-2d": "^1.0.0",
@@ -13,5 +14,8 @@
     "svg-line-segments": "^1.0.0",
     "svg-linearize": "^1.0.0",
     "upload-element": "^1.0.1"
+  },
+  "devDependencies": {
+    "watchify": "^2.2.1"
   }
 }
