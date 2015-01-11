@@ -19,6 +19,17 @@
         left: 0px;
         right: 0px;
       }
+      #controls {
+        margin-top: 5px;
+        padding: 10px;
+        border-top: 2px solid white;
+      }
+      #controls > * {
+        visibility: hidden;
+      }
+      #controls.active > * {
+        visibility: visible;
+      }
       .panes {
         position: absolute;
         top: 00px;
@@ -109,6 +120,11 @@
           </tr>
         </table>
         <div id="code-outer">
+          <form id="controls">
+            <input type="text" size=20 placeholder="filename">
+            <button type="submit">save</button>
+            <span class="result"></span>
+          </form>
           <textarea id="code"></textarea>
         </div>
       </div>

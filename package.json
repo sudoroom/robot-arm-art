@@ -5,16 +5,20 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "body": "^4.5.0",
     "browserify": "^8.0.1",
+    "class-list": "^0.1.1",
     "ecstatic": "^0.5.8",
     "element": "^0.1.4",
     "inform-2d": "^1.0.0",
+    "mkdirp": "^0.5.0",
     "slideways": "^1.0.0",
     "svg-create-element": "^1.0.0",
     "svg-line-segments": "^1.0.0",
     "svg-linearize": "^1.0.0",
     "uglify-js": "^2.4.16",
-    "upload-element": "^1.0.1"
+    "upload-element": "^1.0.1",
+    "xhr": "^2.0.0"
   },
   "devDependencies": {
     "watchify": "^2.2.1"

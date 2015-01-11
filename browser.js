@@ -1,6 +1,8 @@
 var linearize = require('svg-linearize');
 var segments = require('svg-line-segments');
 var createElement = require('svg-create-element');
+var xhr = require('xhr');
+var classList = require('class-list');
 
 var element = require('element');
 var upload = require('upload-element');
@@ -23,8 +25,28 @@ slider.appendTo('#slider');
 var toinform = require('inform-2d');
 
 var code = document.querySelector('#code');
+var controls = document.querySelector('#controls');
 var picture = document.querySelector('#picture');
 var input = document.querySelector('#upload');
+
+controls.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var name = controls.querySelector('input').value;
+    
+    var result = controls.querySelector('.result');
+    var opts = {
+        method: 'POST',
+        uri: '/save/' + name,
+        body: code.value
+    };
+    xhr(opts, function (err, res, body) {
+        if (err) result.textContent = err;
+        else if (!/^2/.test(res.statusCode)) {
+            result.textContent = 'code ' + res.statusCode + ': ' + body;
+        }
+        else result.textContent = body;
+    });
+});
 
 var nsvg, svg;
 upload(input, { type: 'text' }, function (err, results) {
@@ -70,6 +92,7 @@ function compute () {
         vup: param('#vup'),
         vdown: param('#vdown')
     });
+    classList(controls).add('active');
 }
  
 function param (sel) {
