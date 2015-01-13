@@ -68,9 +68,9 @@ function generateImage () {
         tolerance: slider.value,
         segments: param('#segments')
     }));
-    picture.innerHTML = '';
-    picture.appendChild(nsvg);
-    fit(nsvg);
+    //picture.innerHTML = '';
+    //picture.appendChild(nsvg);
+    //fit(nsvg);
     compute();
     generating = false;
     if (doOver) generateImage();
@@ -78,7 +78,8 @@ function generateImage () {
 
 function compute () {
     if (!nsvg) return;
-    code.value = toinform(segments(nsvg), {
+    var segs = segments(nsvg);
+    code.value = toinform(segs, {
         name: document.querySelector('#name').value,
         xangle: param('#xangle'),
         yangle: param('#yangle'),
@@ -93,8 +94,34 @@ function compute () {
         vdown: param('#vdown')
     }) + '\n';
     classList(controls).add('active');
+    
+    var dsvg = svgFromSegs(segs);
+    picture.innerHTML = '';
+    picture.appendChild(dsvg);
+    fit(dsvg);
 }
- 
+
+function svgFromSegs (segs) {
+    var svg = createElement('svg', {
+        viewbox: '0 0 100 100'
+    });
+    var g = createElement('g', {
+        strokeWidth: 3,
+        stroke: 'red',
+        fill: 'transparent'
+    });
+    svg.appendChild(g);
+    segs.forEach(function (seg) {
+        var p = createElement('polyline', {
+            points: seg.map(function (pts) {
+                return pts.join(',');
+            }).join(' ')
+        });
+        g.appendChild(p);
+    });
+    return svg;
+}
+
 function param (sel) {
     return Number(document.querySelector(sel).value);
 }
