@@ -10,7 +10,7 @@
     "class-list": "^0.1.1",
     "ecstatic": "^0.5.8",
     "element": "^0.1.4",
-    "inform-2d": "^1.0.0",
+    "inform-2d": "^2.0.0",
     "mkdirp": "^0.5.0",
     "slideways": "^1.0.0",
     "svg-create-element": "^1.0.0",
