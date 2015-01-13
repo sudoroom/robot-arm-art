@@ -2,6 +2,7 @@ var http = require('http');
 var mkdirp = require('mkdirp');
 var path = require('path');
 var fs = require('fs');
+var through = require('through2');
 
 var ecstatic = require('ecstatic');
 var st = ecstatic(__dirname + '/static');
@@ -23,8 +24,17 @@ var server = http.createServer(function (req, res) {
         w.on('finish', function () {
             res.end('ok\n');
         });
-        req.pipe(w);
+        req.pipe(fixlines()).pipe(w);
     }
     else st(req, res);
 });
 server.listen(5000);
+
+function fixlines () {
+    return through(write);
+    function write (buf, enc, next) {
+        var nbuf = buf.toString('utf8').replace(/\n/g, '\r\n');
+        this.push(nbuf);
+        next();
+    }
+}

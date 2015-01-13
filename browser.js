@@ -91,7 +91,7 @@ function compute () {
         zdown: param('#zdown'),
         vup: param('#vup'),
         vdown: param('#vdown')
-    });
+    }) + '\n';
     classList(controls).add('active');
 }
  

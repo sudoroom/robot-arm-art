@@ -16,6 +16,7 @@
     "svg-create-element": "^1.0.0",
     "svg-line-segments": "^1.0.0",
     "svg-linearize": "^1.0.0",
+    "through2": "^0.6.3",
     "uglify-js": "^2.4.16",
     "upload-element": "^1.0.1",
     "xhr": "^2.0.0"
