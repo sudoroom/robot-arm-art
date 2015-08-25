@@ -2,9 +2,15 @@
 
 draw svg images with a MOTOMAN YASNAC industrial robot arm
 
-* Wiki: [https://sudoroom.org/wiki/Giant_robot_arm](https://sudoroom.org/wiki/Giant_robot_arm)
+* Drawing sample - upload your graphic!: [https://substack.neocities.org/svg2inform.html](https://substack.neocities.org/svg2inform.htm
 
-* Drawing sample: [https://substack.neocities.org/svg2inform.html](https://substack.neocities.org/svg2inform.html)
+* SudoRoom Wiki: [https://sudoroom.org/wiki/Giant_robot_arm](https://sudoroom.org/wiki/Giant_robot_arm)
+
+* SudoRoom Blog Post: [https://sudoroom.org/drawing-with-the-robot-arm/](https://sudoroom.org/drawing-with-the-robot-arm/)
+
+
+* YouTube Video of the Robot Drawing: [https://www.youtube.com/watch?v=6w0WFo8kTJ0](https://www.youtube.com/watch?v=6w0WFo8kTJ0)
+
 
 # install
 
