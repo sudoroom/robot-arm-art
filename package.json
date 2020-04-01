@@ -8,7 +8,7 @@
     "body": "^4.5.0",
     "browserify": "^8.0.1",
     "class-list": "^0.1.1",
-    "ecstatic": "^0.5.8",
+    "ecstatic": "^4.1.2",
     "element": "^0.1.4",
     "inform-2d": "^2.0.0",
     "mkdirp": "^0.5.0",
